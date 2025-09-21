@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather App — Current Weather & Map</title>
+
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <h1>Weather • Now</h1>
+        <small>Current weather + 5-day forecast</small>
+      </div>
+
+      <div class="controls">
+        <div class="search">
+          <input id="searchInput" placeholder="Search city (press Enter)..." />
+          <button id="searchBtn" title="Search">🔎</button>
+        </div>
+
+        <div class="unit-toggle" role="group" aria-label="Units toggle">
+          <button id="cBtn" class="active">°C</button>
+          <button id="fBtn">°F</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <section class="panel weather-panel">
+        <div class="location-row">
+          <div id="locationName" class="location-name">—</div>
+          <div id="updatedAt" class="updated-at"></div>
+        </div>
+
+        <div class="weather-top">
+          <div class="temp-block">
+            <div id="temp" class="temp">--</div>
+            <div id="desc" class="desc">—</div>
+            <img id="icon" class="weather-icon" alt="weather icon" />
+          </div>
+
+          <div class="meta-block">
+            <div class="meta-row"><strong>Humidity</strong><span id="humidity">--</span></div>
+            <div class="meta-row"><strong>Wind</strong><span id="wind">--</span></div>
+            <div class="meta-row"><strong>Sunrise</strong><span id="sunrise">--</span></div>
+            <div class="meta-row"><strong>Sunset</strong><span id="sunset">--</span></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="forecastBtn" class="primary">View 5-Day Forecast</button>
+          <button id="locBtn" class="secondary">Use My Location</button>
+        </div>
+      </section>
+
+      <section class="panel map-panel">
+        <div id="map" class="map-canvas">Map loading…</div>
+        <div class="map-hint">Pin shows the selected location</div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Powered by OpenWeatherMap & Google Maps</div>
+      <small class="note">Note: API keys are visible in this demo (client-side). For production, proxy calls via your backend.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+
+  
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJU9LIh_wXwUU7JHzy3DpXGSsx04M43XM&callback=initMap"></script>
+</body>
+</html>

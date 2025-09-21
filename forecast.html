@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>5-Day Forecast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar small">
+      <div class="brand">
+        <h1>5-Day Forecast</h1>
+      </div>
+      <div class="controls">
+        <a href="index.html" class="back-btn">◀ Back</a>
+      </div>
+    </header>
+
+    <main class="forecast-main">
+      <section id="cityHeader" class="forecast-header"></section>
+      <section id="forecastContainer" class="forecast-grid">
+        Loading forecast...
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Data from OpenWeatherMap</div>
+    </footer>
+  </div>
+
+  <script src="forecast.js"></script>
+</body>
+</html>
